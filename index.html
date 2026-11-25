@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>shadow-qr — QR generator &amp; decoder</title>
+  <meta name="description" content="Generate and decode QR codes in your browser. No uploads, no tracking — everything runs locally." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="backdrop" aria-hidden="true">
+    <span class="bat bat-1">🦇</span>
+    <span class="bat bat-2">🦇</span>
+    <span class="bat bat-3">🦇</span>
+  </div>
+
+  <header class="hero">
+    <h1>shadow<span class="accent">-qr</span></h1>
+    <p class="tagline">Generate. Scan. Stay in the shadows.</p>
+    <p class="sub">A QR code generator &amp; decoder that runs entirely in your browser — nothing you type or drop ever leaves this page.</p>
+  </header>
+
+  <main class="grid">
+    <section class="card" aria-labelledby="gen-heading">
+      <h2 id="gen-heading">🩸 Generate</h2>
+
+      <label for="qr-text">Text or URL</label>
+      <textarea id="qr-text" rows="3" placeholder="https://example.com">https://github.com/MrVempiree</textarea>
+
+      <div class="row">
+        <div>
+          <label for="qr-ec">Error correction</label>
+          <select id="qr-ec">
+            <option value="L">L — low (~7%)</option>
+            <option value="M" selected>M — medium (~15%)</option>
+            <option value="Q">Q — quartile (~25%)</option>
+            <option value="H">H — high (~30%)</option>
+          </select>
+        </div>
+        <div>
+          <label for="qr-size">Image size (px)</label>
+          <input id="qr-size" type="number" min="128" max="2048" step="32" value="512" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div>
+          <label for="qr-fg">Foreground</label>
+          <input id="qr-fg" type="color" value="#0a0a0a" />
+        </div>
+        <div>
+          <label for="qr-bg">Background</label>
+          <input id="qr-bg" type="color" value="#ffffff" />
+        </div>
+      </div>
+
+      <p class="hint">Tip: keep strong contrast between foreground and background, or scanners may struggle.</p>
+
+      <div class="canvas-wrap">
+        <canvas id="qr-canvas" width="256" height="256"></canvas>
+      </div>
+      <p id="gen-meta" class="meta"></p>
+      <p id="gen-error" class="error" role="alert"></p>
+      <button id="download-btn" type="button">Download PNG</button>
+    </section>
+
+    <section class="card" aria-labelledby="dec-heading">
+      <h2 id="dec-heading">🦇 Decode</h2>
+      <p id="decoder-note" class="meta">Decoding happens locally with the BarcodeDetector API.</p>
+
+      <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Drop a QR image here or click to choose a file">
+        <p>Drop a QR image here<br /><span class="meta">or click to choose a file</span></p>
+      </div>
+      <input id="file-input" type="file" accept="image/*" hidden />
+
+      <p id="decode-error" class="error" role="alert"></p>
+
+      <div id="decode-result" hidden>
+        <label for="decoded-text">Decoded content</label>
+        <textarea id="decoded-text" rows="4" readonly></textarea>
+        <p id="url-warning" class="warning" hidden></p>
+        <button id="copy-btn" type="button">Copy</button>
+      </div>
+
+      <p class="hint">Security note: a QR code is just text in disguise. Anyone can encode a phishing link in one — always inspect the destination before opening it.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built by <a href="https://github.com/MrVempiree">Vempire</a> · MIT licensed · Encoder written from scratch (byte mode, versions 1–10)</p>
+  </footer>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

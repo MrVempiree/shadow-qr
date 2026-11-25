@@ -1,0 +1,12 @@
+{
+    "author": "Lavish Gangwar",
+    "description": "QR code generator & decoder that runs entirely in your browser",
+    "license": "MIT",
+    "name": "shadow-qr",
+    "private": true,
+    "scripts": {
+        "test": "node --test"
+    },
+    "type": "module",
+    "version": "1.0.0"
+}
