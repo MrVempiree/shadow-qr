@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400" role="img" aria-label="shadow-qr banner">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d0508"/>
+      <stop offset="0.55" stop-color="#070405"/>
+      <stop offset="1" stop-color="#1a040c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.55">
+      <stop offset="0" stop-color="#dc143c" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#dc143c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff3355"/>
+      <stop offset="1" stop-color="#8b0000"/>
+    </linearGradient>
+    <path id="bat" d="M0,-14 C6,-22 14,-24 20,-18 C30,-28 44,-30 58,-24 C50,-16 48,-8 50,-2 C42,-8 34,-8 28,-3 C26,4 20,10 12,12 C8,8 4,7 0,7 C-4,7 -8,8 -12,12 C-20,10 -26,4 -28,-3 C-34,-8 -42,-8 -50,-2 C-48,-8 -50,-16 -58,-24 C-44,-30 -30,-28 -20,-18 C-14,-24 -6,-22 0,-14 Z"/>
+    <g id="qr-mini">
+      <rect x="0" y="0" width="84" height="84" rx="8" fill="#ffffff"/>
+      <g fill="#0a0a0a">
+        <rect x="8" y="8" width="20" height="20"/><rect x="56" y="8" width="20" height="20"/><rect x="8" y="56" width="20" height="20"/>
+        <rect x="13" y="13" width="10" height="10" fill="#ffffff"/><rect x="61" y="13" width="10" height="10" fill="#ffffff"/><rect x="13" y="61" width="10" height="10" fill="#ffffff"/>
+        <rect x="16" y="16" width="4" height="4"/><rect x="64" y="16" width="4" height="4"/><rect x="16" y="64" width="4" height="4"/>
+        <rect x="36" y="10" width="6" height="6"/><rect x="46" y="20" width="6" height="6"/><rect x="36" y="30" width="6" height="6"/>
+        <rect x="58" y="38" width="6" height="6"/><rect x="40" y="44" width="6" height="6"/><rect x="66" y="52" width="6" height="6"/>
+        <rect x="36" y="58" width="6" height="6"/><rect x="48" y="66" width="6" height="6"/><rect x="60" y="70" width="6" height="6"/>
+      </g>
+    </g>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="400" fill="url(#glow)"/>
+  <rect x="0" y="396" width="1200" height="4" fill="url(#accent)"/>
+
+  <g fill="#dc143c" opacity="0.85">
+    <use href="#bat" transform="translate(120,88) scale(1.15)"/>
+    <use href="#bat" transform="translate(1058,74) scale(0.8)"/>
+    <use href="#bat" transform="translate(980,300) scale(1.35)"/>
+    <use href="#bat" transform="translate(196,306) scale(0.65)"/>
+  </g>
+  <g fill="#5c0a1c" opacity="0.9">
+    <use href="#bat" transform="translate(310,60) scale(0.5)"/>
+    <use href="#bat" transform="translate(880,120) scale(0.55)"/>
+  </g>
+
+  <use href="#qr-mini" transform="translate(508,36) scale(0.9)"/>
+
+  <text x="600" y="238" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="96" font-weight="800" letter-spacing="3" fill="#f3e9ea">shadow<tspan fill="#dc143c">-qr</tspan></text>
+  <text x="600" y="292" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="27" letter-spacing="7" fill="#b9a3a8">GENERATE · SCAN · STAY IN THE SHADOWS</text>
+  <text x="600" y="338" text-anchor="middle" font-family="'Segoe UI', Arial, Helvetica, sans-serif" font-size="19" fill="#8f757c">QR generator &amp; decoder — 100% in your browser, by Vempire</text>
+</svg>
